@@ -1,2 +1,14 @@
 Link Github :
 https://github.com/NizanHulq/react_nizan-dhiaulhaq
+
+Soal Prioritas 2 :
+1. Membuat branch baru
+```
+git branch development
+
+```
+dilampirkan juga buti screenshot
+
+2. Pull Request
+Jawabannya ada pada bukti screenshot
+
