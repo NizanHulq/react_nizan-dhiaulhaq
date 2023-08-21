@@ -12,3 +12,5 @@ dilampirkan juga buti screenshot
 2. Pull Request
 Jawabannya ada pada bukti screenshot
 
+Soal Eksplorasi :
+https://github.com/NizanHulq/eksplorasi-github-flow
