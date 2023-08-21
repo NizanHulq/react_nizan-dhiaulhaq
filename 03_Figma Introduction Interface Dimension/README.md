@@ -1,4 +1,4 @@
-# Figma Introduction Interface Dimension
+# (03) Figma Introduction Interface Dimension
 
 **Figma** merupakan editor grafik vektor dan alat prototyping yang menggunakan basis web dan bisa offline pada dekstop. Figma adalah aplikasi berbasis website yang berfungsi untuk mendesain UI dan UX yang dapat digunakan untuk membuat aplikasi ataupun website.
 

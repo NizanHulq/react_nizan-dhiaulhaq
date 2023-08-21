@@ -1,4 +1,4 @@
-# Version Control and Branch Management (Git)
+# (02) Version Control and Branch Management (Git)
 
 **Versioning** tugasnya adalah untuk mengatur versi dari project yang kita buat.
 

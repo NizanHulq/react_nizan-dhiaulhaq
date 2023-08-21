@@ -1,4 +1,4 @@
-# Introduction Front End
+# (01) Introduction Front End
 
 **Front end** akan berurusan dengan hal hal yang berkaitan dengan user atau client side.
 Front end developer bertugas untuk mengimplementasikan hasil desain dari UI Designer.
