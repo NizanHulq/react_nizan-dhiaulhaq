@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Product</title>
+</head>
+<body>
+    <h1>Create Product</h1>
+    <h2>Detail Product</h2>
+
+    <form >
+        <div>
+            <p>Product name :</p>
+            <input type="text" required minlength="6" maxlength="50">
+        </div>
+        <div>
+            <p>Product Category :</p>
+            <select required>
+                <option > </option>
+            </select>
+        </div>
+        <div>
+            <p>Product Freshnes :</p>
+            <input type="radio" required> Brand New
+            <br>
+            <input type="radio" required> Second Hank
+            <br>
+            <input type="radio" required> Refurbished
+        </div>
+        <div>
+            Image of Product <input type="file" required>
+        </div>
+        <div>
+            <p>Additional Description</p>
+            <textarea cols="30" rows="10" required></textarea>
+        </div>
+        <div>
+            <p>Product price :</p>
+            <input type="number" placeholder="$100" required>
+        </div>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
