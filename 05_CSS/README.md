@@ -24,3 +24,5 @@
 
 **CSS Display** digunakan untuk mengatur tampilan dari elemen HTML.
 
+**CSS Media Query** digunakan untuk mengatur tampilan dari elemen HTML pada berbagai ukuran layar.
+
