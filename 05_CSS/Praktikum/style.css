@@ -1,21 +1,22 @@
-@import url('https://fonts.cdnfonts.com/css/jost');
+@import url("https://fonts.cdnfonts.com/css/jost");
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Jost*', sans-serif;
-                                                
+  font-family: "Jost*", sans-serif;
 }
 .container {
-  padding: 16px;
+  padding: 82px;
 }
 
 #hero {
+  display: flex;
   background-color: #37517e;
   padding-top: 20px;
   padding-bottom: 10px;
-  height: 100vh;
-  vertical-align: middle;
+  height: 760px;
+  justify-content: center;
+  align-items: center;
 }
 .row {
   display: flex;
@@ -27,7 +28,7 @@ body {
 }
 
 .btn {
-  background-color: #47B2E4;
+  background-color: #47b2e4;
   border: none;
   border-radius: 50px;
   color: white;
@@ -41,14 +42,15 @@ body {
 }
 
 .title {
-    color:#37517E;
-    font-size: 25px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 10px;
+  color: #37517e;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
 }
-input[type=text], select {
-  width: 60%;
+input[type="text"],
+select {
+  width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   border-radius: 50px;
@@ -57,4 +59,30 @@ input[type=text], select {
   border: none;
   box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
+}
+
+#footer {
+  background-color: #37517e;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: #777;
+}
+
+.dot {
+  height: 40px;
+  width: 40px;
+  background-color: #47B2E4;;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
 }
