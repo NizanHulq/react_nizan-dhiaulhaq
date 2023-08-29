@@ -5,6 +5,35 @@ body {
   padding: 0;
   font-family: "Jost*", sans-serif;
 }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: #777;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border-radius: 50px;
+  display: inline-block;
+  background: #fff;
+  border: none;
+  box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+}
+.dot {
+  height: 40px;
+  width: 40px;
+  background-color: #47B2E4;;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
 .container {
   padding: 82px;
 }
@@ -41,24 +70,20 @@ body {
   cursor: pointer;
 }
 
+.btn:hover {
+  background-color: #37517e;
+}
+
+form .btn:hover {
+  background-color: #777;
+}
+
 .title {
   color: #37517e;
   font-size: 25px;
   font-weight: bold;
   text-align: center;
   margin-top: 10px;
-}
-input[type="text"],
-select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  border-radius: 50px;
-  display: inline-block;
-  background: #fff;
-  border: none;
-  box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.06);
-  box-sizing: border-box;
 }
 
 #footer {
@@ -70,19 +95,3 @@ select {
   margin-top: 10px;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  color: #777;
-}
-
-.dot {
-  height: 40px;
-  width: 40px;
-  background-color: #47B2E4;;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 10px;
-}
