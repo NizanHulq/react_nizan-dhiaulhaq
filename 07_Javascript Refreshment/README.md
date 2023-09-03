@@ -51,3 +51,15 @@ Perbedaan antara **Map** dan **ForEach** adalah **Map** mengembalikan array baru
 2. `Function Expression` : mendeklarasikan function dengan keyword `const` atau `let`.
 
 **Arrow Function** adalah cara lain untuk mendeklarasikan function. Arrow function menggunakan tanda panah `=>` untuk mendeklarasikan function.
+
+**Class** adalah template untuk membuat object. Class digunakan untuk membuat object dengan properti dan method tertentu.
+
+ **Constructor** adalah method khusus untuk membuat dan menginisialisasi object yang dibuat dari class.
+
+ **Method** adalah fungsi yang dideklarasikan di dalam class.
+
+ **Attribute** adalah variabel yang dideklarasikan di dalam class.
+
+ **Document Object Model (DOM)** adalah representasi dari halaman web. DOM memungkinkan kita untuk mengubah konten, struktur, dan style dari halaman web.
+
+ 
