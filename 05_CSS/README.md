@@ -1,4 +1,4 @@
-# (04) CSS
+# (05) CSS
 
 **CSS** digunakan untuk mengatur atau menghias tampilan dari halaman web.
 

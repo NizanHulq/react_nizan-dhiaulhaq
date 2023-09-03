@@ -1,4 +1,4 @@
-# (04) Javascript Refreshment
+# (07) Javascript Refreshment
 
 **Javascript** adalah bahasa pemrograman yang high-lvel, scripting, untyped, dan interpreted.
 

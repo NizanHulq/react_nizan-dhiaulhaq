@@ -1,4 +1,4 @@
-# (04) BOOTSTRAP
+# (06) BOOTSTRAP
 
 **Bootstrap** adalah sebuah framework CSS yang dapat digunakan untuk mempercepat proses pembuatan website. Bootstrap menyediakan berbagai macam komponen yang dapat digunakan untuk mempercantik tampilan website.
 
