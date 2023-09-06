@@ -89,27 +89,28 @@
             <div class="mb-4 has-validation">
                 <label for="product-name" class="form-label">Product name</label>
                 <input type="text" class="form-control w-75" id="product-name" name="product-name" required>
-                <span class="invalid-name"></span>
+                <span class="invalid-name valid"></span>
             </div>
 
             <div class="mb-4">
-                <label for="exampleFormControlInput2" class="form-label">Product Category</label>
-                <select class="form-select w-50" aria-label="Default select example" id="product-cat" name="product-cat">
+                <label for="" class="form-label">Product Category</label>
+                <select class="form-select w-50" aria-label="Default select example" id="product-cat"
+                    name="product-cat">
                     <option selected>Choose...</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
                 </select>
-                <span class="invalid-cat"></span>
+                <span class="invalid-cat valid"></span>
 
             </div>
 
             <div class="mb-4">
-                <label for="exampleFormControlInput3" class="form-label">Image of Product</label>
+                <label for="" class="form-label">Image of Product</label>
                 <div class="input-group custom-file-button w-50">
                     <label class="input-group-text" for="inputGroupFile">Choose File</label>
                     <input type="file" class="form-control" id="image-product" name="image-product">
-                    <span class="invalid-image"></span>
+                    <span class="invalid-image valid"></span>
 
                 </div>
             </div>
@@ -117,39 +118,36 @@
             <div class="mb-4">
                 <label for="exampleFormControlInput4" class="form-label">Product Freshness</label>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="product-freshness"
-                        value="brand" id="brand">
-                    <label class="form-check-label" for="flexRadioDefault1">
+                    <input class="form-check-input" type="radio" name="product-freshness" value="brand" id="brand">
+                    <label class="form-check-label" for="brand">
                         Brand New
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="product-freshness"
-                        value="second">
-                    <label class="form-check-label" for="product-freshness" name="product-freshness"
-                        value="second" id="second">
+                    <input class="form-check-input" type="radio" name="product-freshness" value="second" id="second">
+                    <label class="form-check-label" for="second">
                         Second Hank
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="product-freshness"
                         value="refurbished" id="refurbished">
-                    <label class="form-check-label" for="flexRadioDefault3">
+                    <label class="form-check-label" for="Refurbished">
                         Refurbished
                     </label>
                 </div>
-                <span class="invalid-freshness"></span>
+                <span class="invalid-freshness valid"></span>
             </div>
 
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Additional Description</label>
+                <label for="" class="form-label">Additional Description</label>
                 <textarea class="form-control" id="description" name="description" rows="5"></textarea>
-                <span class="invalid-description"></span>
+                <span class="invalid-description valid"></span>
             </div>
             <div class="mb-4">
                 <label for="product-price" class="form-label">Product Price</label>
                 <input type="text" class="form-control" id="product-price" name="product-price" placeholder="$ 1">
-                <span class="invalid-price"></span>
+                <span class="invalid-price valid"></span>
             </div>
             <br>
             <div class="row px-4">
@@ -160,102 +158,27 @@
         </form>
     </div>
 
-    <script>
-        const form = document.getElementById('form');
+    <div class="container">
+        <div class="text-center"><h1>List Product</h1></div>
+        <table class="table table-bordered" id="productTable">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Product Category</th>
+                    <th scope="col">Image Of Product</th>
+                    <th scope="col">Product Freshness</th>
+                    <th scope="col">Additional Description</th>
+                    <th scope="col">Product Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
 
-        let checkInputs = () => {
-            let productName = document.getElementsByName('product-name');
-            let productPrice = document.getElementsByName('product-price');
-            let productCat = document.getElementsByName('product-cat');
-            let productFreshness = document.getElementsByName('product-freshness');
-            let productDescription = document.getElementsByName('description');
-            let productImage = document.getElementsByName('image-product');
-
-            let productNameValue = productName[0].value;
-            let productPriceValue = productPrice[0].value;
-            let productCatValue = productCat[0].value;
-            let productDescriptionValue = productDescription[0].value;
-            let productImageValue = productImage[0].value;
-            
-
-            let isChecked = false;
-
-            for (let i = 0; i < productFreshness.length; i++) {
-                if (productFreshness[i].checked) {
-                    isChecked = true;
-                    break; 
-                }
-            }
-
-            let validationName = document.querySelector('.invalid-name');
-            let validationPrice = document.querySelector('.invalid-price');
-            let validationCat = document.querySelector('.invalid-cat');
-            let validationFreshness = document.querySelector('.invalid-freshness');
-            let validationDescription = document.querySelector('.invalid-description');
-            let validationImage = document.querySelector('.invalid-image');
-
-            let dissalowedCharacters = /[@#\/]/;
-
-            if (productNameValue === '') {
-                validationName.innerHTML = 'Please enter a valid Product name.';
-                validationName.style.color = 'red';
-            } else if (productNameValue.length > 25) {
-                validationName.innerHTML = 'Last Name must not exceed 25 characters.';
-                validationName.style.color = 'red';
-            } else if (dissalowedCharacters.test(productNameValue)) {
-                validationName.innerHTML = 'Name must not contain symbols.';
-                validationName.style.color = 'red';
-            } else {
-                validationName.innerHTML = 'Looks good!';
-                validationName.style.color = 'green';
-            }
-
-            if (productPriceValue === '') {
-                validationPrice.innerHTML = 'Please enter a valid Product price.';
-                validationPrice.style.color = 'red';
-            } else {
-                validationPrice.innerHTML = 'Looks good!';
-                validationPrice.style.color = 'green';
-            }
-
-            if (productCatValue === 'Choose...') {
-                validationCat.innerHTML = 'Please enter a valid Product Category.';
-                validationCat.style.color = 'red';
-            } else {
-                validationCat.innerHTML = 'Looks good!';
-                validationCat.style.color = 'green';
-            }
-
-            if (isChecked === false) {
-                validationFreshness.innerHTML = 'Please enter a valid Product Freshness.';
-                validationFreshness.style.color = 'red';
-            } else {
-                validationFreshness.innerHTML = 'Looks good!';
-                validationFreshness.style.color = 'green';
-            }
-
-            if (productDescriptionValue === '') {
-                validationDescription.innerHTML = 'Please enter a valid Product Description.';
-                validationDescription.style.color = 'red';
-            } else {
-                validationDescription.innerHTML = 'Looks good!';
-                validationDescription.style.color = 'green';
-            }
-
-            if (productImageValue === '') {
-                validationImage.innerHTML = 'Please enter a valid Product Image.';
-                validationImage.style.color = 'red';
-            } else {
-                validationImage.innerHTML = 'Looks good!';
-                validationImage.style.color = 'green';
-            }
-        }
-
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            checkInputs();
-        });
-    </script>
+    <script src="./product-script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
