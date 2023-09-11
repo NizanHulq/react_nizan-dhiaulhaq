@@ -16,36 +16,63 @@ const productImageInput = document.querySelector('input[name="image-product"]');
 let productExisting = JSON.parse(localStorage.getItem("productData")) || [];
 
 const showProduct = () => {
-  let table = document
+  const table = document
     .getElementById("productTable")
     .getElementsByTagName("tbody")[0];
   table.innerHTML = "";
-  
+
   productExisting.forEach((product, index) => {
+    const newRow = table.insertRow(table.length);
+    const cellData = [
+      index + 1,
+      product.name,
+      product.price,
+      product.category,
+      product.freshness,
+      product.description,
+      product.image,
+    ];
 
-    let newRow = table.insertRow(table.length);
-    let cell1 = newRow.insertCell(0);
-    let cell2 = newRow.insertCell(1);
-    let cell3 = newRow.insertCell(2);
-    let cell4 = newRow.insertCell(3);
-    let cell5 = newRow.insertCell(4);
-    let cell6 = newRow.insertCell(5);
-    let cell7 = newRow.insertCell(6);
-
-    cell1.innerHTML = index + 1;
-    cell2.innerHTML = product.name;
-    cell3.innerHTML = product.price;
-    cell4.innerHTML = product.category;
-    cell5.innerHTML = product.freshness;
-    cell6.innerHTML = product.description;
-    cell7.innerHTML = product.image;
+    cellData.forEach((data, cellIndex) => {
+      const cell = newRow.insertCell(cellIndex);
+      cell.innerHTML = data;
+    });
   });
-  
 };
 
-// Check if inputs are valid
+const validateInput = (
+  input,
+  validationElement,
+  validationMessage,
+  isValid
+) => {
+  const disallowedCharacters = /[@#\/]/;
+
+  if (input.value === "") {
+    validationElement.textContent = validationMessage;
+    validationElement.style.color = "red";
+    isValid = false;
+  } else if (input.value.length > 25) {
+    validationElement.textContent =
+      "Nama produk tidak boleh lebih dari 25 karakter.";
+    validationElement.style.color = "red";
+    isValid = false;
+  } else if (disallowedCharacters.test(input.value)) {
+    validationElement.textContent =
+      "Nama produk tidak boleh mengandung simbol.";
+    validationElement.style.color = "red";
+    isValid = false;
+  } else {
+    validationElement.textContent = "Tampak baik!";
+    validationElement.style.color = "green";
+  }
+
+  return isValid;
+};
+
 const checkInputs = () => {
-  // Get validation elements
+  let isValid = true;
+
   const validationName = document.querySelector(".invalid-name");
   const validationPrice = document.querySelector(".invalid-price");
   const validationCat = document.querySelector(".invalid-cat");
@@ -53,81 +80,58 @@ const checkInputs = () => {
   const validationDescription = document.querySelector(".invalid-description");
   const validationImage = document.querySelector(".invalid-image");
 
-  // Regular expression to match disallowed characters
-  const disallowedCharacters = /[@#\/]/;
+  isValid = validateInput(
+    productNameInput,
+    validationName,
+    "Silakan masukkan nama produk yang valid.",
+    isValid
+  );
+  isValid = validateInput(
+    productPriceInput,
+    validationPrice,
+    "Silakan masukkan harga produk yang valid.",
+    isValid
+  );
 
-  // Check Product Name
-  if (productNameInput.value === "") {
-    validationName.innerHTML = "Please enter a valid Product name.";
-    validationName.style.color = "red";
-  } else if (productNameInput.value.length > 25) {
-    validationName.innerHTML = "Product name must not exceed 25 characters.";
-    validationName.style.color = "red";
-  } else if (disallowedCharacters.test(productNameInput.value)) {
-    validationName.innerHTML = "Product name must not contain symbols.";
-    validationName.style.color = "red";
-  } else {
-    validationName.innerHTML = "Looks good!";
-    validationName.style.color = "green";
-  }
-
-  // Check Product Price
-  if (productPriceInput.value === "") {
-    validationPrice.innerHTML = "Please enter a valid Product price.";
-    validationPrice.style.color = "red";
-  } else {
-    validationPrice.innerHTML = "Looks good!";
-    validationPrice.style.color = "green";
-  }
-
-  // Check Product Category
   if (productCatSelect.value === "Choose...") {
-    validationCat.innerHTML = "Please select a valid Product Category.";
+    validationCat.textContent = "Pilih kategori produk yang valid.";
     validationCat.style.color = "red";
+    isValid = false;
   } else {
-    validationCat.innerHTML = "Looks good!";
+    validationCat.textContent = "Tampak baik!";
     validationCat.style.color = "green";
   }
 
-  // Check Product Freshness
   const isChecked = [...productFreshnessInputs].some((input) => input.checked);
   if (!isChecked) {
-    validationFreshness.innerHTML = "Please select a valid Product Freshness.";
+    validationFreshness.textContent =
+      "Pilih tingkat kebersihan produk yang valid.";
     validationFreshness.style.color = "red";
+    isValid = false;
   } else {
-    validationFreshness.innerHTML = "Looks good!";
+    validationFreshness.textContent = "Tampak baik!";
     validationFreshness.style.color = "green";
   }
 
-  // Check Product Description
-  if (productDescriptionInput.value === "") {
-    validationDescription.innerHTML =
-      "Please enter a valid Product Description.";
-    validationDescription.style.color = "red";
-  } else {
-    validationDescription.innerHTML = "Looks good!";
-    validationDescription.style.color = "green";
-  }
-
-  // Check Product Image
-  if (productImageInput.value === "") {
-    validationImage.innerHTML = "Please enter a valid Product Image.";
-    validationImage.style.color = "red";
-  } else {
-    validationImage.innerHTML = "Looks good!";
-    validationImage.style.color = "green";
-  }
-
-  // Check if all inputs are valid
-  const isValid = [...document.querySelectorAll(".valid")].every(
-    (element) => element.style.color === "green"
+  isValid = validateInput(
+    productDescriptionInput,
+    validationDescription,
+    "Silakan masukkan deskripsi produk yang valid.",
+    isValid
   );
+  isValid = validateInput(
+    productImageInput,
+    validationImage,
+    "Silakan masukkan gambar produk yang valid.",
+    isValid
+  );
+
   return isValid;
 };
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  checkInputs();
+
   if (checkInputs()) {
     const product = {
       name: productNameInput.value,
@@ -148,4 +152,3 @@ form.addEventListener("submit", (e) => {
 });
 
 document.addEventListener("DOMContentLoaded", showProduct());
-
