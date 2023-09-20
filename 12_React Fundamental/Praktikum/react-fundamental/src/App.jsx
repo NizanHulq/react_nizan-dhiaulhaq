@@ -3,55 +3,15 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './style.css'
 import bootstrapLogo from './assets/bootstrap-logo.svg'
-import js from './product-script'
+import product from './product-script.js'
+import Header from './components/header'
+import Table from './components/table'
 
 function App() {
 
   return (
     <>
-      <header>
-        <nav className="navbar  navbar-expand-lg shadow-sm px-5">
-          <div className="container-fluid">
-            <a className="navbar-brand" href="#" style={{ fontWeight: 600 }}>
-              Simple header
-            </a>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNavAltMarkup"
-              aria-controls="navbarNavAltMarkup"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon" />
-            </button>
-            <div
-              className="collapse navbar-collapse ms-auto"
-              id="navbarNavAltMarkup"
-              style={{ flexGrow: "unset" }}
-            >
-              <div className="navbar-nav gap-4">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Home
-                </a>
-                <a className="nav-link" href="#">
-                  Features
-                </a>
-                <a className="nav-link" href="#">
-                  Pricing
-                </a>
-                <a className="nav-link" href="#">
-                  FAQs
-                </a>
-                <a className="nav-link" href="#">
-                  About
-                </a>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </header>
+      <Header />
       <div className="container my-5 w-50">
         <div className="text-center">
           <img src={bootstrapLogo} alt="" />
@@ -197,20 +157,7 @@ function App() {
         <div className="text-center">
           <h1>List Product</h1>
         </div>
-        <table className="table table-bordered" id="productTable">
-          <thead>
-            <tr>
-              <th scope="col">No</th>
-              <th scope="col">Product Name</th>
-              <th scope="col">Product Category</th>
-              <th scope="col">Image Of Product</th>
-              <th scope="col">Product Freshness</th>
-              <th scope="col">Additional Description</th>
-              <th scope="col">Product Price</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
+        <Table />
       </div>
     </>
   )
