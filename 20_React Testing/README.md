@@ -29,3 +29,4 @@ Fungsi **render RTL** akan merender file JSX apa pun yang dibutuhkan. Setelah it
 
 Untuk mengetes **custom hook**, kita menggunakan **React Hooks Testing Library**. Dia akan memberikan kita alat alat untuk mengetes hooks tanpa merender satu komponen.
 
+
