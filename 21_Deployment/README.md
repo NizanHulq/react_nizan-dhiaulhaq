@@ -24,3 +24,11 @@ Netlify adalah layanan hosting gratis untuk website statik. Netlify juga menyedi
 
 Vercel adalah end to end platform untuk para developer yang memungkingkan membuat sebuah deployment pada web application
 
+Link github :
+
+https://github.com/NizanHulq/react-si-product
+
+Link deploy :
+
+https://react-si-product.vercel.app/
+
