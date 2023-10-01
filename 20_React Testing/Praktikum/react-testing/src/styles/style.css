@@ -1,0 +1,155 @@
+@import url("https://fonts.cdnfonts.com/css/jost");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Jost*", sans-serif;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: #777;
+}
+
+/* input[type="text"],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border-radius: 16px;
+  display: inline-block;
+  background: #fff;
+  border: none;
+  box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+} */
+
+.dot {
+  height: 40px;
+  width: 40px;
+  background-color: #47b2e4;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.container-style {
+  padding: 82px;
+}
+
+#hero {
+  display: flex;
+  background-color: #37517e;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  height: 760px;
+  justify-content: center;
+  align-items: center;
+}
+.row-style {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 1;
+  padding: 0 16px;
+}
+
+.nav-link {
+  color: #0d6efd !important;
+  font-weight: 500 !important;
+  border-radius: 4px !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+.nav-link :hover {
+  color: #fff !important;
+}
+
+.active {
+  color: #fff !important;
+  background-color: #0d6efd !important;
+}
+.btn-style {
+  background-color: #47b2e4;
+  border: none;
+  border-radius: 16px;
+  color: white;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.btn-style:hover {
+  background-color: #37517e;
+}
+
+form .btn-style:hover {
+  background-color: #777;
+}
+
+.title-style {
+  color: #37517e;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#footer {
+  background-color: #37517e;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.custom-file-button input[type="file"] {
+  margin-left: -2px !important;
+  color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.custom-file-button input[type="file"]::-webkit-file-upload-button {
+  display: none;
+}
+
+.custom-file-button input[type="file"]::file-selector-button {
+  display: none;
+}
+
+.custom-file-button label {
+  border-color: #0d6efd;
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.custom-file-button:hover label {
+  cursor: pointer;
+  background-color: #64a0fa;
+}
+
+.nav-link {
+  color: #0d6efd !important;
+  font-weight: 500 !important;
+  border-radius: 4px !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+.nav-link :hover {
+  color: #fff !important;
+}
+
+.active {
+  color: #fff !important;
+  background-color: #0d6efd !important;
+}
