@@ -153,7 +153,7 @@ const CreateProduct = () => {
                         <div className="d-flex align-items-center">
                             <select
                                 className="form-select w-50 me-2"
-                                aria-label="Default select example"
+                                aria-label="product-cat"
                                 id="product-cat"
                                 name="product-cat"
                                 value={productCat}
@@ -178,6 +178,7 @@ const CreateProduct = () => {
                             <input
                                 type="file"
                                 className="form-control"
+                                aria-label="product-image"
                                 id="image-product"
                                 name="image-product"
                                 onChange={handleImageChange}
@@ -185,7 +186,7 @@ const CreateProduct = () => {
                         </div>
                         <div className="text-danger">{errorMessages.productImage}</div>
                     </div>
-                    <div className="mb-4">
+                    <div className="mb-4" aria-label="product-freshness">
                         <label htmlFor="exampleFormControlInput4" className="form-label">
                             Product Freshness
                         </label>
@@ -194,6 +195,7 @@ const CreateProduct = () => {
                                 className="form-check-input"
                                 type="radio"
                                 name="product-freshness"
+                                aria-label="brand"
                                 defaultValue="brand"
                                 id="brand"
                                 checked={productFreshness === 'brand'}
@@ -208,6 +210,7 @@ const CreateProduct = () => {
                                 className="form-check-input"
                                 type="radio"
                                 name="product-freshness"
+                                aria-label="second"
                                 defaultValue="second"
                                 id="second"
                                 checked={productFreshness === 'second'}
@@ -222,6 +225,7 @@ const CreateProduct = () => {
                                 className="form-check-input"
                                 type="radio"
                                 name="product-freshness"
+                                aria-label="refurbished"
                                 defaultValue="refurbished"
                                 id="refurbished"
                                 checked={productFreshness === 'refurbished'}
@@ -240,6 +244,7 @@ const CreateProduct = () => {
                         <div className="d-flex align-items-center">
                             <textarea
                                 className="form-control me-2"
+                                aria-label="product-description"
                                 id="description"
                                 name="description"
                                 rows={5}
@@ -255,6 +260,7 @@ const CreateProduct = () => {
                             <input
                                 type="text"
                                 className="form-control me-2"
+                                aria-label="product-price"
                                 id="product-price"
                                 name="product-price"
                                 placeholder="$ 1"
@@ -267,7 +273,7 @@ const CreateProduct = () => {
                     <br />
                     <div className="row px-4">
                         <div className="col">
-                            <button className="btn btn-primary w-100" type="submit">
+                            <button className="btn btn-primary w-100" type="submit" aria-label="submit-button">
                                 Submit
                             </button>
                         </div>
