@@ -1,0 +1,13 @@
+## Tweet Classifier Model Playground
+
+System :
+
+You will be provided with a tweet, and your task is to classify its sentiment as positive, neutral, or negative.
+
+Input :
+
+FINALLY DEPOK HUJAN AHAHAH terima kasih ayah ojak dan ayu tingting selaku warga depok juga, terima kasih bang windah basudara udah nemenin musim kemarauku, tidak lupa terima kasih papah mamah yang udah ngelahirin aku. makasih semua 🤍
+
+Output :
+
+positive
