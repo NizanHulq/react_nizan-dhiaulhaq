@@ -9,6 +9,8 @@ const openai = new OpenAI({
 
 const AiTweet = () => {
 
+    const defaultPrompt = 'You will be given a tweet, and your job is to classify its sentiment as positive, neutral, or negative. If sentiment is positive or neutral, tell users or recommend better tweets. If the sentiment is negative then tell the user and suggest a positive tweet. Provide output using Indonesian.';
+
     const [prompt, setPrompt] = useState("");
     const [results, setResults] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -22,7 +24,7 @@ const AiTweet = () => {
             const response = await openai.chat.completions.create({
                 messages: [{
                     role: "system",
-                    content: "You will be given a tweet, and your job is to classify its sentiment as positive, neutral, or negative. If sentiment is positive or neutral, tell users or recommend better tweets. If the sentiment is negative then tell the user and suggest a positive tweet. Provide output using Indonesian."
+                    content: defaultPrompt
                 }],
                 model: "gpt-3.5-turbo",
                 max_tokens: 100,
@@ -51,7 +53,7 @@ const AiTweet = () => {
         setPrompt("");
         try {
             const response = await openai.chat.completions.create({
-                messages: [{ role: "user", content: "Tweet: " + prompt }],
+                messages: [{ role: "user", content: defaultPrompt + "Tweet: " + prompt }],
                 model: "gpt-3.5-turbo",
                 max_tokens: 150,
             });
